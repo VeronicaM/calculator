@@ -1,0 +1,24 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "\"# calculator\"",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeronicaM/calculator.git"
+  },
+  "author": "Veronica Mihai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VeronicaM/calculator/issues"
+  },
+  "homepage": "https://github.com/VeronicaM/calculator#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.0",
+    "gulp-minifier": "^0.2.1"
+  }
+}
