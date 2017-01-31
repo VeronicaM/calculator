@@ -1,1 +1,56 @@
-h1{color:#2C3D6B}
+h1 {
+  color: #2C3D6B;
+}
+button {
+  width: 66.66666667px;
+  height: 40px;
+  margin: 0 0 5px 0;
+}
+.position {
+  width: 300px;
+  position: absolute;
+  top: 30%;
+  left: 35%;
+}
+.backspace {
+  position: relative;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 4px 6px 4px 7px;
+  background-color: gray;
+}
+.backspace:after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 11px solid transparent;
+  border-right-color: grey;
+  bottom: 1px;
+  left: -21px;
+}
+.display {
+  z-index: -1;
+  position: relative;
+}
+.display:before {
+  content: attr(data-value) " ";
+  float: right;
+  margin-bottom: -21px;
+  color: gray;
+  position: relative;
+  padding: 0 10px;
+}
+.display input {
+  width: 300px;
+  padding: 10px;
+}
+.operations {
+  margin-left: -30px;
+}
+.numbers button {
+  width: 74.66666667px;
+}
+.last {
+  margin-right: 3px;
+}

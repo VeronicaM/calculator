@@ -5,11 +5,11 @@ var minify = require('gulp-minifier');
  
 gulp.task('minifyT', function() {
   gulp.src('./src/**/*').pipe(minify({
-    minify: true,
+    minify: false,
     collapseWhitespace: true,
     conservativeCollapse: true,
-    minifyJS: true,
-    minifyCSS: true,
+    minifyJS: false,
+    minifyCSS: false,
     getKeptComment: function (content, filePath) {
         var m = content.match(/\/\*![\s\S]*?\*\//img);
         return m && m.join('\n') + '\n' || '';
@@ -27,7 +27,7 @@ gulp.task("less", function() {
 
 // Task to watch less files for changes
 gulp.task("watch", function() {
-    gulp.watch("./src/*.less", ["less","minifyT"]);
+    gulp.watch("./src/*", ["less","minifyT"]);
 });
 
 // Compile everything once and then watch for changes.

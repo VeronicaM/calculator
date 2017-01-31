@@ -1,4 +1,62 @@
 @import "colors";
+@reference-point:200px;
+@calculator-size:@reference-point*1.5;
 h1{
 	color:@nav-color;
+}
+button{
+	width: @reference-point/3;
+	height: @reference-point/5;
+	margin:0 0 5px 0;
+}
+.position{
+	width: @calculator-size;
+	position: absolute;
+    top: 30%;
+    left: 35%;
+}
+.backspace{
+	position: relative;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 4px 6px 4px 7px;
+    background-color: gray;
+}
+.backspace:after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 11px solid transparent;
+    border-right-color: grey;
+    bottom: 1px;
+    left: -21px;
+}
+.display{
+	 z-index: -1;
+    position: relative;
+   &:before{
+	content: attr(data-value) " ";
+    float: right;
+    margin-bottom: -21px;
+    color: gray;
+    position: relative;
+    padding: 0 10px;
+  }
+  input{
+		width: @calculator-size;
+		padding: 10px;
+
+	}
+}
+.operations{
+	margin-left: -30px;
+}
+.numbers{
+	button{
+		width: @reference-point/3+8;
+	}
+}
+.last{
+	margin-right: 3px;
 }
