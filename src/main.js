@@ -1,5 +1,8 @@
 $(function () 
  {    
+ 	window.onload = function() {
+       $('#operation')[0].value = '';
+    }
  	 var count=0,values=[],op="",solved=false,isSetOp=false,isSetTerm =false,term=0;
 	  $(document).ready(function(){
 	     	

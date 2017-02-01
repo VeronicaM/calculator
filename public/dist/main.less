@@ -13,8 +13,23 @@
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+@font-face {
+  font-family: 'Digital-7';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Digital-7'),
+       url('../fonts/digital-7.ttf') format('truetype');
+}
+    ::-webkit-scrollbar{ 
+	}
+	::-webkit-scrollbar-button       { }
+	::-webkit-scrollbar-track        { }
+	::-webkit-scrollbar-track-piece  { }
+	::-webkit-scrollbar-thumb        { }
+	::-webkit-scrollbar-corner       { }
+	::-webkit-resizer                { }
 body{
-  background-image:url('../img/old_mathematics.png');	
+  background-image:url('../img/old_mathematics3.png');	
 }
 button{
 	width: @reference-point/3;
@@ -36,32 +51,25 @@ button{
 .position{
 	width: @calculator-size;
 	position: absolute;
-    top: 30%;
-    left: 35%;
+     top: 10%;
+    left: 3%;
     border-radius: 19px;
     padding: 25px 40px 17px 40px;
     z-index:-2;
     background-color: @main-color;
-    box-shadow: @button-container-inset;
+    box-shadow: @button-container-inset,12px 18px 71px black;
     .noselection;	
+    @media screen and (min-width: 600px) {
+	   top:20%;
+	   left:20%;
+	}
+
+    @media screen and (min-width: 900px) {
+	   top:30%;
+	   left:30%;
+	}
 }
-.backspace{
-	position: relative;
-    border-radius: 4px;
-    font-weight: bold;
-    padding: 4px 6px 4px 7px;
-    background-color: gray;
-}
-.backspace:after {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 0;
-    border: 11px solid transparent;
-    border-right-color: grey;
-    bottom: 1px;
-    left: -21px;
-}
+
 .display{
 	 z-index: -1;
     position: relative;
@@ -69,11 +77,22 @@ button{
     
    &:before{
 	content: attr(data-value) " ";
-    float: right;
     margin-bottom: -21px;
-    color: gray;
+    color: @history-color;
+    letter-spacing: 3px;
+    font-size: 15px;
     position: relative;
     padding: 0 10px;
+    float: right;
+    text-align: right;
+    height: 21px;
+    overflow-y: auto;
+    -moz-overflow-y: auto;
+    overflow-x: hidden;
+    display: inline-block;
+	min-width: 100%;
+    max-width: 100%;
+
   }
   input{
   	    background-color: @display-color;
@@ -82,11 +101,11 @@ button{
 		border-radius: 10px;
 		text-align: right;
 		padding: 17px 10px 5px;
-		font-size: @main-font-size;
+		font-size: @main-font-size*2;
 		border: 0;
         box-shadow: 0 0 6px #000 inset;
         color:@display-text-color;
-
+         font-family: "Digital-7";
         &::-webkit-input-placeholder {
 		   color: @display-text-color;
 		}
@@ -126,6 +145,7 @@ button{
 .numbers{
 	button{
 		 width: @reference-point/3+8;
+		 font-family: "Digital-7";
 		 &:hover{
 		 	background-color: @numbers-hover;  
 		 }
@@ -139,6 +159,7 @@ button{
 .erasers{
 	button{
 		background-color: @erasers-color;	
+		font-family: "Helvetica";
 		color:white;
 	  &:hover{
 			background-color: @erasers-color-hover;
