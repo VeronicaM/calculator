@@ -5,11 +5,11 @@ var minify = require('gulp-minifier');
  
 gulp.task('minifyT', function() {
   gulp.src('./src/**/*').pipe(minify({
-    minify: false,
+    minify: true,
     collapseWhitespace: true,
     conservativeCollapse: true,
-    minifyJS: false,
-    minifyCSS: false,
+    minifyJS: true,
+    minifyCSS: true,
     getKeptComment: function (content, filePath) {
         var m = content.match(/\/\*![\s\S]*?\*\//img);
         return m && m.join('\n') + '\n' || '';

@@ -1,19 +1,49 @@
 @import "colors";
 @reference-point:200px;
-@calculator-size:@reference-point*1.5;
-h1{
-	color:@nav-color;
+@calculator-size:@reference-point*1.76;
+@main-font-size : 25px;
+@button-shadow-inset:0 0 11px #000 inset;
+@button-container-inset:0 0 26px #000 inset;
+.noselection{
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+body{
+  background-image:url('../img/old_mathematics.png');	
 }
 button{
 	width: @reference-point/3;
 	height: @reference-point/5;
 	margin:0 0 5px 0;
+    font-weight: bold;
+    font-size: @main-font-size;
+    border-radius: 10px;
+    border:0;
+    box-shadow: @button-shadow-inset;
+    &:active{
+       box-shadow: @button-shadow-inset, 0 2px #666;
+       transform: translateY(1px);
+    }
+    &:focus{
+    	outline:0;
+    }
 }
 .position{
 	width: @calculator-size;
 	position: absolute;
     top: 30%;
     left: 35%;
+    border-radius: 19px;
+    padding: 25px 40px 17px 40px;
+    z-index:-2;
+    background-color: @main-color;
+    box-shadow: @button-container-inset;
+    .noselection;	
 }
 .backspace{
 	position: relative;
@@ -35,6 +65,8 @@ button{
 .display{
 	 z-index: -1;
     position: relative;
+    margin-bottom: 17px;
+    
    &:before{
 	content: attr(data-value) " ";
     float: right;
@@ -44,19 +76,73 @@ button{
     padding: 0 10px;
   }
   input{
-		width: @calculator-size;
+  	    background-color: @display-color;
+		width: @reference-point*1.5;
 		padding: 10px;
+		border-radius: 10px;
+		text-align: right;
+		padding: 17px 10px 5px;
+		font-size: @main-font-size;
+		border: 0;
+        box-shadow: 0 0 6px #000 inset;
+        color:@display-text-color;
 
+        &::-webkit-input-placeholder {
+		   color: @display-text-color;
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+		   color: @display-text-color;  
+		}
+
+		&:-moz-placeholder {  /* Firefox 19+ */
+		   color: @display-text-color;  
+		}
+
+		&:-ms-input-placeholder {  
+		   color: @display-text-color;  
+		}
 	}
 }
 .operations{
 	margin-left: -30px;
+	button{
+    	background-color: @operations-color;
+    	color:white;
+		&:last-child{
+			background-color: @equal-color;
+		    color: white;
+		     &:hover{
+			  background-color: @equal-color-hover;
+		     }
+		}
+		&:hover{
+			background-color: @hover-color;
+		}
+	}
+	
+  
 }
 .numbers{
 	button{
-		width: @reference-point/3+8;
+		 width: @reference-point/3+8;
+		 &:hover{
+		 	background-color: @numbers-hover;  
+		 }
 	}
 }
 .last{
-	margin-right: 3px;
+	button:first-child{
+		width:@reference-point/1.295;
+	}
+}
+.erasers{
+	button{
+		background-color: @erasers-color;	
+		color:white;
+	  &:hover{
+			background-color: @erasers-color-hover;
+		}
+	}
+	
 }
