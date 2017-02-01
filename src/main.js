@@ -70,8 +70,8 @@ $(function ()
 			  	 	  }
 	  	   	    }
 	  	   	     else if( $("#operation")[0].value!==""){
-	  	   	     	$(".display")[0].dataset.value = $(".display")[0].dataset.value.substring(0,$(".display")[0].dataset.value.length-1)+this.innerHTML;	
-	  	   	  	   values[1] = op;
+	  	   	     	 $(".display")[0].dataset.value = $(".display")[0].dataset.value.substring(0,$(".display")[0].dataset.value.length-1)+this.innerHTML;	
+	  	   	  	     values[1] = op;
 	  	   	     }
 	  	   }
 	  	   	  
