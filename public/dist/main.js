@@ -7,7 +7,6 @@ $(function ()
 	  $(document).ready(function(){
 	     	
 	  	 $('.numbers div:not(.erasers) button').on('click',function(e){
-	  	 
 	  	 	 if((count==0 || !isSetOp) && !solved){
 	  	 	 	 $("#operation")[0].value +=(this.innerHTML);	
 	  	 	  }else{
@@ -43,7 +42,7 @@ $(function ()
 	  	   	  
 	  	   	   term= $("#operation")[0].value;
 
-	  	   	   if(this.innerHTML == '='){
+	  	   	   if(this.innerHTML == '=' &&  $("#operation")[0].value!==""){
 	  	   	   	  values.push(term);	
 		 		  var compute = eval(values.join(""));
 		 		  $("#operation")[0].value = compute;
@@ -54,27 +53,26 @@ $(function ()
 	  	   	   	  count = 0;
 	  	   	   	  values = [];
 	  	   	   }else{
-	  	   	   		if(isSetTerm){ 
-	  	   	  	$(".display")[0].dataset.value += term+this.innerHTML;	
-	  	   	  	  count++;
-		  	 	  isSetOp = true; 
-		  	 	  isSetTerm =false;
-		  	 	  if(count ==2 ){
-		  	 	    values.push(term);	
-		 		    var compute = eval(values.join(""));
-		 		    $("#operation")[0].value = compute;
-		  	 	    count=1;
- 		 			values = [compute,op];
-		  	 	  }
-		  	 	  else{
-		  	 	  	values.push(term+op);
-		  	 	  }
-
-	  	   	  }
-	  	   	  else{
-	  	   	  	$(".display")[0].dataset.value = $(".display")[0].dataset.value.substring(0,$(".display")[0].dataset.value.length-1)+this.innerHTML;	
-	  	   	  	values[1] = op;
-	  	   	  }
+	  	   	   if(isSetTerm){ 
+		  	   	  	$(".display")[0].dataset.value += term+this.innerHTML;	
+		  	   	  	  count++;
+			  	 	  isSetOp = true; 
+			  	 	  isSetTerm =false;
+			  	 	  if(count ==2 ){
+			  	 	    values.push(term);	
+			 		    var compute = eval(values.join(""));
+			 		    $("#operation")[0].value = compute;
+			  	 	    count=1;
+	 		 			values = [compute,op];
+			  	 	  }
+			  	 	  else{
+			  	 	  	values.push(term+op);
+			  	 	  }
+	  	   	    }
+	  	   	     else if( $("#operation")[0].value!==""){
+	  	   	     	$(".display")[0].dataset.value = $(".display")[0].dataset.value.substring(0,$(".display")[0].dataset.value.length-1)+this.innerHTML;	
+	  	   	  	   values[1] = op;
+	  	   	     }
 	  	   }
 	  	   	  
 	  	 });
