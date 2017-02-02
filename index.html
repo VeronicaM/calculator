@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="./public/dist/main.css" />
   <meta charset="UTF-8">
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <html lang="en-us">
     <meta content="en-us" http-equiv="Content-Language" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Calculator</title>
@@ -14,9 +15,10 @@
 
 </head>
 <body>
+  <h1 class="title"> Electronic Calculator  </h1>
    <div class="container position"> 
    <div class="row display" data-value="">
-  	 <input id="operation" autocomplete="off" type="text" placeholder="0" readonly> 	 	
+  	 <input id="operation" aria-labelledby="display" autocomplete="off" type="text" placeholder="0" readonly> 	 	
    </div>
    <div class="row">
    	 <section class="col-xs-10 numbers">
@@ -45,13 +47,13 @@
 	   	 	<button>.</button>
    	 	</div>	
    	  </section>
-   	   <aside class="col-xs-2 operations">
+   	   <div class="col-xs-2 operations">
    	 	<button>÷</button>
    	 	<button>×</button>
    	 	<button>-</button>
    	 	<button>+</button>
    	 	<button id="compute">=</button>
-   	 </aside>
+   	 </div>
    	</div>
      <footer> Made by <a href="https://github.com/VeronicaM" target="_blank">Veronica Mihai</a> </footer>
   </div>
