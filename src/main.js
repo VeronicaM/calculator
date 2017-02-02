@@ -7,15 +7,21 @@ $(function ()
 	  $(document).ready(function(){
 	     	
 	  	 $('.numbers div:not(.erasers) button').on('click',function(e){
-	  	 	 if((count==0 || !isSetOp) && !solved){
-	  	 	 	 $("#operation")[0].value +=(this.innerHTML);	
-	  	 	  }else{
-	  	 	  	$("#operation")[0].value =(this.innerHTML);
-	  	 	  	isSetOp =false;
-	  	 	  	solved = false;
-	  	 	  }	
+	  	 	 if(this.innerHTML =="0" && ($("#operation")[0].value.charAt(0) ==="0" || $("#operation")[0].value.charAt(0) ==="")){
+	  	 	 	console.log("cannot start with 0");
+	  	 	 }else{
+	  	 	    if((count==0 || !isSetOp) && !solved){
 
-	  	 	isSetTerm = true;
+	  	 	 	 $("#operation")[0].value +=(this.innerHTML);	
+		  	 	  }else{
+		  	 	  	$("#operation")[0].value =(this.innerHTML);
+		  	 	  	isSetOp =false;
+		  	 	  	solved = false;
+		  	 	  }	
+
+		  	 	isSetTerm = true;	
+	  	 	 }
+	  	 	 
 	  	 });
 
 	  	  $('.erasers button').on('click',function(e){

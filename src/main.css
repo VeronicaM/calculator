@@ -21,6 +21,11 @@
 }
 body {
   background-image: url('../img/old_mathematics3.png');
+  height: 100%;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
 }
 button {
   width: 66.66666667px;
@@ -42,8 +47,9 @@ button:focus {
 .position {
   width: 352px;
   position: absolute;
-  top: 10%;
-  left: 3%;
+  margin-top: 10%;
+  margin-left: 4%;
+  margin-bottom: -100px;
   border-radius: 19px;
   padding: 25px 40px 17px 40px;
   z-index: -2;
@@ -65,13 +71,14 @@ button:focus {
 }
 @media screen and (min-width: 600px) {
   .position {
-    top: 20%;
+    margin-top: 4%;
     left: 20%;
+    margin-bottom: -100px;
   }
 }
 @media screen and (min-width: 900px) {
   .position {
-    top: 30%;
+    margin-top: 6%;
     left: 30%;
   }
 }
@@ -113,17 +120,26 @@ button:focus {
 }
 .display input::-webkit-input-placeholder {
   color: #E74124;
+  margin-bottom: 10px;
+  text-align: right !important;
+  font-family: Arial;
 }
 .display input :-moz-placeholder {
   /* Firefox 18- */
   color: #E74124;
+  font-family: Arial;
+  text-align: right!important;
 }
 .display input:-moz-placeholder {
   /* Firefox 19+ */
   color: #E74124;
+  font-family: Arial;
+  text-align: right !important;
 }
 .display input:-ms-input-placeholder {
   color: #E74124;
+  font-family: Arial;
+  text-align: right !important;
 }
 .operations {
   margin-left: -30px;
@@ -159,4 +175,26 @@ button:focus {
 }
 .erasers button:hover {
   background-color: #FE0000;
+}
+footer {
+  position: relative;
+  bottom: -100px;
+  left: 0;
+  height: 2.4em;
+  color: white;
+  font-size: 20.83333333px;
+  width: 100%;
+  font-style: italic;
+  font-family: cursive;
+  text-align: center;
+}
+footer a {
+  color: yellow;
+  text-decoration: none;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 2px, #7C4A0F 2px, #7C4A0F 3px, rgba(0, 0, 0, 0) 3px);
+}
+footer a:hover {
+  color: #FC8902;
+  background-image: none;
+  text-decoration: none;
 }

@@ -30,7 +30,13 @@
 	::-webkit-resizer                { }
 body{
   background-image:url('../img/old_mathematics3.png');	
+  height: 100%;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
 }
+
 button{
 	width: @reference-point/3;
 	height: @reference-point/5;
@@ -51,8 +57,9 @@ button{
 .position{
 	width: @calculator-size;
 	position: absolute;
-     top: 10%;
-    left: 3%;
+     margin-top: 10%;
+    margin-left: 4%;
+   margin-bottom: -100px;
     border-radius: 19px;
     padding: 25px 40px 17px 40px;
     z-index:-2;
@@ -60,12 +67,13 @@ button{
     box-shadow: @button-container-inset,12px 18px 71px black;
     .noselection;	
     @media screen and (min-width: 600px) {
-	   top:20%;
+	   margin-top:4%;
 	   left:20%;
+	   margin-bottom: -100px;
 	}
 
     @media screen and (min-width: 900px) {
-	   top:30%;
+	   margin-top:6%;
 	   left:30%;
 	}
 }
@@ -108,21 +116,35 @@ button{
          font-family: "Digital-7";
         &::-webkit-input-placeholder {
 		   color: @display-text-color;
+		   margin-bottom:10px;
+		   text-align: right !important;
+           font-family: Arial;
+
+     	  	
 		}
 
 		:-moz-placeholder { /* Firefox 18- */
 		   color: @display-text-color;  
+		   font-family: Arial;
+		   text-align: right!important;
 		}
 
 		&:-moz-placeholder {  /* Firefox 19+ */
 		   color: @display-text-color;  
+		   font-family: Arial;
+		   text-align: right !important;
 		}
 
-		&:-ms-input-placeholder {  
-		   color: @display-text-color;  
-		}
+		
 	}
+
 }
+.display input:-ms-input-placeholder {  
+		   color: @display-text-color;  
+		   font-family: Arial;
+		   text-align: right !important;
+		  
+		}
 .operations{
 	margin-left: -30px;
 	button{
@@ -166,4 +188,27 @@ button{
 		}
 	}
 	
+}
+footer{
+  position: relative;
+  bottom:-100px;
+  left: 0;
+  height: 2.4em;
+  color: white;
+  font-size:@main-font-size/1.2;
+  width: 100%;
+  font-style: italic;
+  font-family: cursive;
+  text-align: center;
+  a{
+  	 color: yellow;
+  	 text-decoration: none;
+  	 background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 2px, #7C4A0F 2px, #7C4A0F 3px, rgba(0, 0, 0, 0) 3px);
+  	&:hover{
+  		color:@equal-color-hover;
+  		background-image: none;
+  		text-decoration: none;
+  	}
+  }	
+
 }
