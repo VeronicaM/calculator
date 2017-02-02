@@ -1,7 +1,7 @@
 "# calculator" 
 A calculator with addition, multiplication, division and soustraction capabilities. 
 
-![Screenshot1](https://cloud.githubusercontent.com/assets/2241065/22510934/8c3e8966-e89c-11e6-83c6-2149e27cef85.png) 
+![Screenshot1](https://cloud.githubusercontent.com/assets/2241065/22551145/3e6a8396-e95c-11e6-84b7-673b3d114525.png) 
 
 Technologies used:
  
@@ -12,3 +12,4 @@ Technologies used:
 - Digital-7 Font : http://www.1001fonts.com/digital-7-font.html
 - Gulp  http://gulpjs.com/ 
 - SubtlePatterns https://github.com/subtlepatterns/SubtlePatterns
+- Weinre for testing on mobile. https://www.npmjs.com/package/weinre 
